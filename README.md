@@ -22,3 +22,28 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+##usersテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+|nickname|string      | null: false                    |
+|email   |string      | null: false                    |
+|password|string      | null: false                    |
+
+###Association
+has_many :plans
+
+##plansテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+|title   | string     | null: false                    |
+|text    | text       |                                |
+|duration| integer    | null: false                    |
+|rank    | integer    | null: false                    |
+|user    | reference  |null: false, foreign_key: true  |
+
+###Association
+belongs_to :user
